@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using H2GeometriArv;
 
-namespace H2_Geometri_Arv
+namespace H2GeometriArv
 {
+    /// <summary>
+    /// Assignment D)
+    /// Paralellogram class inherits from square class
+    /// it has its own constructor and overrides the calcArea and calcPerimeter methods from square
+    /// </summary>
     class Parallelogram : Square
     {
-        
-        
         private double side_b;
 
         public double Side_b
@@ -48,6 +52,5 @@ namespace H2_Geometri_Arv
             double perimeter = (2 * side_a) + (2 * side_b);
             return perimeter;
         }
-    
     }
 }

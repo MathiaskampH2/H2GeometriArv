@@ -4,13 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace H2_Geometri_Arv
+
+namespace H2GeometriArv
 {
-    class Square
+    /// <summary>
+    /// Assignment A)
+    /// Class Square, has purpose of beeing a superclass
+    /// where i can inherit its methods and properties.
+    /// </summary>
+    public class Square : Shapes
     {
+        // Assignment B) create set and get 
         protected double side_a;
 
-        // opgave B Set og get methods
         public double Side_a
         {
             get { return side_a; }
@@ -23,12 +29,14 @@ namespace H2_Geometri_Arv
             this.side_a = a;
         }
 
+        // calculates the Perimeter for a square
         public virtual double calcPerimeter()
         {
             double perimeter = Math.Pow(side_a, 2);
             return perimeter;
         }
 
+        // calculate the area of a square        
         public virtual double calcArea()
         {
             double area = side_a * 4;

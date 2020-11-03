@@ -3,9 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using H2GeometriArv;
 
-namespace H2_Geometri_Arv
+namespace H2GeometriArv
 {
+    /// <summary>
+    /// Assingment E) Trapeze class.
+    /// Inherits from square.
+    /// Has its own contructor and overrides method calcArea and calcPerimeter from square class.
+    /// Method calcSTrapeze calculates and returns the S value
+    /// Method calcHTrapeze calculates and returns the H value
+    /// </summary>
     class Trapeze : Square
     {
         private double side_b;
@@ -32,7 +40,7 @@ namespace H2_Geometri_Arv
             set { side_d = value; }
         }
 
-        public Trapeze(double side_a, double side_b, double side_c, double side_d) :base (side_a)
+        public Trapeze(double side_a, double side_b, double side_c, double side_d) : base(side_a)
         {
             this.side_b = side_b;
             this.side_c = side_c;
@@ -49,7 +57,9 @@ namespace H2_Geometri_Arv
         public double calcHTrapeze()
         {
             double s_trapeze = calcSTrapeze();
-            double h_trapeze = (2 / (side_a - side_c)) * Math.Sqrt(s_trapeze * ((s_trapeze - side_a + side_c) * (s_trapeze -side_b) * (s_trapeze - side_d)));
+            double h_trapeze = (2 / (side_a - side_c)) *
+                               Math.Sqrt(s_trapeze * ((s_trapeze - side_a + side_c) * (s_trapeze - side_b) *
+                                                      (s_trapeze - side_d)));
 
             return h_trapeze;
         }
@@ -57,7 +67,6 @@ namespace H2_Geometri_Arv
 
         public override double calcArea()
         {
-            
             double h_trapeze = calcHTrapeze();
 
 

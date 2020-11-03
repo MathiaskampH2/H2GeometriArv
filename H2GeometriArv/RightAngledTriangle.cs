@@ -1,7 +1,12 @@
 ﻿using System;
 
-namespace H2_Geometri_Arv
+namespace H2GeometriArv
 {
+    /// <summary>
+    /// Assignment F)
+    /// RightAngledTriangle Class inherits from Square class
+    /// OVerrides calcArea and calcPerimeter methods
+    /// </summary>
     class RightAngledTriangle : Square
     {
         private double side_b;

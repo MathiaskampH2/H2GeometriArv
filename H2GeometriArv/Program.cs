@@ -1,15 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.Remoting.Channels;
-using System.Text;
-using System.Threading.Tasks;
-using H2_Geometri_Arv;
 
-namespace H2_Geometri_Arv
+namespace H2GeometriArv
 {
 
-   
     class Program
     {
         static void Main(string[] args)
@@ -60,21 +54,60 @@ namespace H2_Geometri_Arv
             Rectangle r = new Rectangle(5, 7);
             Rectangle r2 = new Rectangle(12, 17);
 
-            Console.WriteLine($"The area of the Rectangle with a sides of:{r.Side_a}, b side of: {r.Side_b} is: " +
-                              p2.calcArea());
-            Console.WriteLine(
-                $"The perimeter of the Parallelogram with a sides of:{r2.Side_a}, b side of: {r2.Side_b} is : " +
-                r2.calcPerimeter());
+            Console.WriteLine($"The area of the Rectangle with a sides of:{r.Side_a}, b side of: {r.Side_b} is: " + r.calcArea());
+            Console.WriteLine($"The perimeter of the Parallelogram with a sides of:{r.Side_a}, b side of: {r.Side_b} is : " + r.calcPerimeter());
+            Console.WriteLine($"The area of the Rectangle with a sides of:{r2.Side_a}, b side of: {r2.Side_b} is: " + r2.calcArea());
+            Console.WriteLine($"The perimeter of the Parallelogram with a sides of:{r2.Side_a}, b side of: {r2.Side_b} is : " + r2.calcPerimeter());
 
             RightAngledTriangle right = new RightAngledTriangle(5,7);
             RightAngledTriangle right2 = new RightAngledTriangle(10,17);
             Console.WriteLine($"The area of the right angled triangle with a sides of:{right.Side_a}, b side of: {right.Side_b} is :" + right.calcArea());
+            Console.WriteLine($"The perimeter of the right angled triangle with a sides of:{right.Side_a}, b side of: {right.Side_b} is: " + right.calcPerimeter());
+
+            Console.WriteLine($"The area of the right angled triangle with a sides of:{right2.Side_a}, b side of: {right2.Side_b} is :" + right2.calcArea());
             Console.WriteLine($"The perimeter of the right angled triangle with a sides of:{right2.Side_a}, b side of: {right2.Side_b} is: " + right2.calcPerimeter());
 
-            List<Shape> Shape = new List<Shape>();
-
-            Shape.Add(s2);
+            Console.Clear();
             
+            
+            // Assignment G
+            List<Shapes> shapes = new List<Shapes>();
+
+            // add shapes to the shapes list
+            shapes.Add(s);
+            shapes.Add(t);
+            shapes.Add(p);
+            shapes.Add(r);
+            shapes.Add(right);
+
+            for (int i = 0; i < shapes.Count; i++)
+            {
+                switch (i)
+                {
+                    case 0:
+                        Console.WriteLine($"The area of a square with a side = {s.Side_a} is : " + s.calcArea());
+                        Console.WriteLine($"The perimeter of a square with a side = {s.Side_a} is :" + s.calcPerimeter());
+                        break;
+
+                    case 1:
+                        Console.WriteLine($"The area of the trapeze with a sides of:{t.Side_a}, b side of: {t.Side_b}, c side of: {t.Side_c}, d side of :{t.Side_d} is: " + t.calcArea());
+                        Console.WriteLine($"The perimeter of the trapeze with a sides of:{t.Side_a}, b side of: {t.Side_b}, c side of: {t.Side_c}, d side of :{t.Side_d} is: " + t.calcPerimeter());
+                        break;
+                    case 2:
+                        Console.WriteLine($"The area of the Parallelogram with a sides of:{p.Side_a}, b side of: {p.Side_b}, angle of {p.Angle} is: " + p.calcArea());
+                        Console.WriteLine($"The perimeter of the Parallelogram with a sides of:{p.Side_a}, b side of: {p.Side_b} is: " + p.calcPerimeter());
+                        break;
+                    case 3:
+                        Console.WriteLine($"The area of the Rectangle with a sides of:{r.Side_a}, b side of: {r.Side_b} is: " + r.calcArea());
+                        Console.WriteLine($"The perimeter of the Parallelogram with a sides of:{r.Side_a}, b side of: {r.Side_b} is : " + r.calcPerimeter());
+                        break;
+
+                    case 4:
+                        Console.WriteLine($"The area of the right angled triangle with a sides of:{right.Side_a}, b side of: {right.Side_b} is :" + right.calcArea());
+                        Console.WriteLine($"The perimeter of the right angled triangle with a sides of:{right.Side_a}, b side of: {right.Side_b} is: " + right.calcPerimeter());
+                        break;
+                }
+            }
         }
     }
 }

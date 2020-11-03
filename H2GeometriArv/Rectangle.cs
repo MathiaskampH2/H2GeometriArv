@@ -4,9 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace H2_Geometri_Arv
+namespace H2GeometriArv
 {
-    class Rectangle :Square
+    /// <summary>
+    /// Part of assignment C
+    /// Inherits from square class
+    /// Overrides calcPerimeter and calcArea method
+    /// </summary>
+    class Rectangle : Square
     {
         private double side_b;
 
